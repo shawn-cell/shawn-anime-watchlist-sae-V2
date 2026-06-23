@@ -1,0 +1,15 @@
+function requireShawnJrUser(){const user=window.SAE_DB.getCurrentUser(); if(!user){alert("Please sign in first to use Shawn Jr."); window.location.href="login.html"; return null;} return user;}
+function addChatMessage(text,type="ai"){const chat=shawnJrChat; const bubble=document.createElement("div"); bubble.className=type==="user"?"user-message":"ai-message"; bubble.innerHTML=text; chat.appendChild(bubble); chat.scrollTop=chat.scrollHeight;}
+function shawnJrReply(prompt){
+  const q=prompt.toLowerCase();
+  if(q.includes("classroom of the elite")||q.includes("ayanokoji")) return `<strong>Shawn Jr:</strong><br>If you like <strong>Classroom of the Elite</strong>, go for Tomodachi Game, Death Note, Code Geass and No Game No Life. Want me to build you a full 10-anime Ayanokoji-style list?`;
+  if(q.includes("attack on titan")) return `<strong>Shawn Jr:</strong><br>After <strong>Attack on Titan</strong>, try <strong>Vinland Saga</strong>, <strong>86</strong>, <strong>Code Geass</strong>, <strong>Parasyte</strong> and <strong>The Promised Neverland S1</strong>.`;
+  if(q.includes("psychological")||q.includes("mind game")||q.includes("manipulative")) return `<strong>Shawn Jr:</strong><br>Psychological / manipulative list: Classroom of the Elite, Death Note, Tomodachi Game, Code Geass, Monster, Kaiji, No Game No Life.`;
+  if(q.includes("solo leveling")) return `<strong>Shawn Jr:</strong><br>Solo Leveling vibe matches <strong>The Eminence in Shadow</strong>, <strong>Overlord</strong>, <strong>Shangri-La Frontier</strong> and <strong>That Time I Got Reincarnated as a Slime</strong>.`;
+  if(q.includes("rate my watchlist")) return `<strong>Shawn Jr:</strong><br>Your taste gives strategic dark-leaning watcher energy: aura, intelligence, high-stakes progression, and capable protagonists.`;
+  return `<strong>Shawn Jr:</strong><br>I can help with recommendations, summaries, smart MC anime, dark anime like AOT, watch order, and comparing anime by strategy or hype.`;
+}
+function saveShawnJrConversation(userPrompt, aiResponse){const user=window.SAE_DB.getCurrentUser(); if(!user) return; const history=window.SAE_DB.getShawnJrHistory(); history.push({id:crypto.randomUUID(),userId:user.id,prompt:userPrompt,response:aiResponse,createdAt:new Date().toISOString()}); window.SAE_DB.saveShawnJrHistory(history);}
+function handlePrompt(text){addChatMessage(text,"user"); const reply=shawnJrReply(text); addChatMessage(reply,"ai"); saveShawnJrConversation(text,reply);}
+shawnJrForm?.addEventListener("submit",e=>{e.preventDefault(); const user=requireShawnJrUser(); if(!user) return; const text=shawnJrInput.value.trim(); if(!text) return; handlePrompt(text); shawnJrInput.value="";});
+document.addEventListener("DOMContentLoaded",()=>{requireShawnJrUser(); addChatMessage("<strong>Shawn Jr online.</strong><br>Ask me for recommendations, comparisons, manipulative MC picks, summaries, or watch order advice."); document.querySelectorAll(".prompt-btn").forEach(btn=>btn.addEventListener("click",()=>handlePrompt(btn.textContent.trim())));});
