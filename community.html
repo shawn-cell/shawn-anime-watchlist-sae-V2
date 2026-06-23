@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community • Shawn anime-watchlist.SAE</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="community">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><h1>SAE</h1><p>Shawn anime-watchlist</p></div>
+      <nav class="side-nav">
+        <a href="index.html">Dashboard</a>
+        <a href="watchlist.html">My Watchlist</a>
+        <a href="profile.html">Profile</a>
+        <a href="community.html" class="active">Community</a>
+        <a href="shawn-jr.html">Shawn Jr</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div><h2>Community Chat</h2><p class="muted">Talk anime, theories, rankings and reactions</p></div>
+        <div class="user-pill">
+          <span id="navUserLabel">Guest</span>
+          <button id="logoutBtn" class="btn btn-outline small hidden">Logout</button>
+          <a href="login.html" id="loginBtn" class="btn btn-outline small">Sign In</a>
+        </div>
+      </header>
+
+      <section class="section community-layout">
+        <div class="room-list card">
+          <h3>Chat Rooms</h3>
+          <button class="room-btn active" data-room="global">Global Anime Chat</button>
+          <button class="room-btn" data-room="classroom-of-the-elite">Classroom of the Elite</button>
+          <button class="room-btn" data-room="attack-on-titan">Attack on Titan</button>
+          <button class="room-btn" data-room="solo-leveling">Solo Leveling</button>
+          <button class="room-btn" data-room="jujutsu-kaisen">Jujutsu Kaisen</button>
+        </div>
+
+        <div class="chat-panel card">
+          <div class="chat-header"><h3 id="currentRoomLabel">Global Anime Chat</h3></div>
+          <div id="chatMessages" class="chat-messages"></div>
+          <form id="chatForm" class="chat-form">
+            <input id="chatInput" type="text" placeholder="Type your message..." required />
+            <button class="btn" type="submit">Send</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/firebase-config.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/community.js"></script>
+</body>
+</html>

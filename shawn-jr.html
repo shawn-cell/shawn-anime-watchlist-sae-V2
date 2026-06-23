@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shawn Jr • Shawn anime-watchlist.SAE</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="shawnjr">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><h1>SAE</h1><p>Shawn anime-watchlist</p></div>
+      <nav class="side-nav">
+        <a href="index.html">Dashboard</a>
+        <a href="watchlist.html">My Watchlist</a>
+        <a href="profile.html">Profile</a>
+        <a href="community.html">Community</a>
+        <a href="shawn-jr.html" class="active">Shawn Jr</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div><h2>Shawn Jr</h2><p class="muted">Anime strategist assistant • recommendations • summaries • comparisons</p></div>
+        <div class="user-pill">
+          <span id="navUserLabel">Guest</span>
+          <button id="logoutBtn" class="btn btn-outline small hidden">Logout</button>
+          <a href="login.html" id="loginBtn" class="btn btn-outline small">Sign In</a>
+        </div>
+      </header>
+
+      <section class="section shawnjr-layout">
+        <div class="card prompt-panel">
+          <h3>Suggested prompts</h3>
+          <div class="prompt-list">
+            <button class="prompt-btn">Recommend psychological anime like Classroom of the Elite</button>
+            <button class="prompt-btn">What should I watch after Attack on Titan?</button>
+            <button class="prompt-btn">Give me manipulative genius MC anime</button>
+            <button class="prompt-btn">Summarize Solo Leveling without spoilers</button>
+            <button class="prompt-btn">Rate my watchlist vibe</button>
+          </div>
+        </div>
+
+        <div class="card shawnjr-chat-card">
+          <div id="shawnJrChat" class="shawnjr-chat"></div>
+          <form id="shawnJrForm" class="chat-form">
+            <input id="shawnJrInput" type="text" placeholder="Ask Shawn Jr about anime..." required />
+            <button class="btn" type="submit">Ask</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/firebase-config.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/shawnjr.js"></script>
+</body>
+</html>

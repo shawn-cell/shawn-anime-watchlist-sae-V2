@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shawn anime-watchlist.SAE</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="home">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <h1>SAE</h1>
+        <p>Shawn anime-watchlist</p>
+      </div>
+
+      <nav class="side-nav">
+        <a href="index.html" class="active">Dashboard</a>
+        <a href="watchlist.html">My Watchlist</a>
+        <a href="profile.html">Profile</a>
+        <a href="community.html">Community</a>
+        <a href="shawn-jr.html">Shawn Jr</a>
+      </nav>
+
+      <div class="sidebar-card">
+        <h3>Elite Picks</h3>
+        <p>Classroom of the Elite</p>
+        <p>Attack on Titan</p>
+        <p>Blue Lock</p>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <h2>Shawn anime-watchlist.SAE</h2>
+          <p class="muted">Version 4.1 • personalized anime command center</p>
+        </div>
+
+        <div class="topbar-actions">
+          <input id="searchInput" type="text" placeholder="Search anime..." />
+          <div class="user-pill">
+            <span id="navUserLabel">Guest</span>
+            <button id="logoutBtn" class="btn btn-outline small hidden">Logout</button>
+            <a href="login.html" id="loginBtn" class="btn btn-outline small">Sign In</a>
+          </div>
+        </div>
+      </header>
+
+      <section class="hero hero-ayanokoji">
+        <div class="hero-text">
+          <span class="badge">Version 4.1</span>
+          <h1>The elite anime command center</h1>
+          <p>
+            Track anime, chat with other fans, search live anime data, and use
+            <strong>Shawn Jr</strong> — your anime strategist assistant.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="watchlist.html" class="btn">Open Watchlist</a>
+            <a href="shawn-jr.html" class="btn btn-outline">Ask Shawn Jr</a>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <h3>Profile Preview</h3>
+          <div class="mini-stats">
+            <div class="mini-card"><span>Watching</span><strong id="statWatching">0</strong></div>
+            <div class="mini-card"><span>Completed</span><strong id="statCompleted">0</strong></div>
+            <div class="mini-card"><span>Favorites</span><strong id="statFavorites">0</strong></div>
+            <div class="mini-card"><span>Entries</span><strong id="statTotal">0</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-header">
+          <h3>Pinned Favorites</h3>
+          <p class="muted">Your personal elite anchors</p>
+        </div>
+
+        <div class="grid-2 featured-grid">
+          <div class="featured-card">
+            <div class="featured-overlay"></div>
+            <div class="featured-content">
+              <span class="pill">Psychological • School</span>
+              <h3>Classroom of the Elite</h3>
+              <p>A strategic school battle where intelligence is the real weapon.</p>
+              <button class="btn small" onclick="openAnimeByTitle('Classroom of the Elite')">View Details</button>
+            </div>
+          </div>
+
+          <div class="featured-card aot">
+            <div class="featured-overlay"></div>
+            <div class="featured-content">
+              <span class="pill">Action • Mystery • Dark</span>
+              <h3>Attack on Titan</h3>
+              <p>War, freedom, ideology, sacrifice — and one of anime’s biggest escalations.</p>
+              <button class="btn small" onclick="openAnimeByTitle('Attack on Titan')">View Details</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-header">
+          <h3>Anime Catalog</h3>
+          <p class="muted">Static elite picks + live Jikan search results</p>
+        </div>
+        <div id="animeGrid" class="anime-grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="animeModal" class="modal hidden">
+    <div class="modal-card modal-large">
+      <button class="close-btn" onclick="closeAnimeModal()">✕</button>
+      <div id="animeModalContent"></div>
+    </div>
+  </div>
+
+  <script src="js/firebase-config.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

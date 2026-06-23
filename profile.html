@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile • Shawn anime-watchlist.SAE</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="profile">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><h1>SAE</h1><p>Shawn anime-watchlist</p></div>
+      <nav class="side-nav">
+        <a href="index.html">Dashboard</a>
+        <a href="watchlist.html">My Watchlist</a>
+        <a href="profile.html" class="active">Profile</a>
+        <a href="community.html">Community</a>
+        <a href="shawn-jr.html">Shawn Jr</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div><h2>Profile</h2><p class="muted">Your anime identity, stats and favorites</p></div>
+        <div class="user-pill">
+          <span id="navUserLabel">Guest</span>
+          <button id="logoutBtn" class="btn btn-outline small hidden">Logout</button>
+          <a href="login.html" id="loginBtn" class="btn btn-outline small">Sign In</a>
+        </div>
+      </header>
+
+      <section class="section profile-grid">
+        <div class="profile-card">
+          <div class="profile-avatar" id="profileAvatar">S</div>
+          <h3 id="profileName">Shawn</h3>
+          <p id="profileBio" class="muted">Anime strategist. Psychological anime enjoyer.</p>
+
+          <form id="profileForm" class="profile-form">
+            <input type="text" id="profileNameInput" placeholder="Username" />
+            <textarea id="profileBioInput" placeholder="Bio"></textarea>
+            <input type="text" id="favoriteAnimeInput" placeholder="Favorite anime (comma separated)" />
+            <button type="submit" class="btn full">Save Profile</button>
+          </form>
+        </div>
+
+        <div class="stats-panel">
+          <div class="mini-stats">
+            <div class="mini-card"><span>Watching</span><strong id="profileWatching">0</strong></div>
+            <div class="mini-card"><span>Completed</span><strong id="profileCompleted">0</strong></div>
+            <div class="mini-card"><span>Favorites</span><strong id="profileFavorites">0</strong></div>
+            <div class="mini-card"><span>Total Entries</span><strong id="profileTotal">0</strong></div>
+          </div>
+
+          <div class="favorite-box">
+            <h3>Favorite Anime</h3>
+            <ul id="favoriteAnimeList"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/firebase-config.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>
