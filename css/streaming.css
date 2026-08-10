@@ -1,0 +1,111 @@
+/* Streaming Platform Styles */
+
+.streaming-platforms {
+    margin-top: 20px;
+    padding: 15px;
+    background: linear-gradient(135deg, rgba(78, 205, 196, 0.1) 0%, rgba(255, 107, 107, 0.1) 100%);
+    border: 1px solid rgba(78, 205, 196, 0.3);
+    border-radius: 8px;
+}
+
+.streaming-platforms h3 {
+    margin-bottom: 12px;
+    font-size: 0.95em;
+    color: #ffd60a;
+}
+
+.streaming-link {
+    display: block;
+    padding: 8px 12px;
+    margin: 6px 0;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(78, 205, 196, 0.3);
+    border-radius: 6px;
+    color: #eaeaea;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.streaming-link:hover {
+    background-color: rgba(78, 205, 196, 0.2);
+    border-color: #4ecdc4;
+    color: #fff;
+}
+
+.streaming-section {
+    margin: 20px 0;
+    padding: 15px;
+    background: linear-gradient(135deg, rgba(78, 205, 196, 0.1) 0%, rgba(255, 107, 107, 0.1) 100%);
+    border: 1px solid rgba(78, 205, 196, 0.3);
+    border-radius: 8px;
+}
+
+.streaming-section h4 {
+    color: #ffd60a;
+    margin-bottom: 12px;
+    font-size: 1em;
+}
+
+.streaming-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.streaming-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 14px;
+    background: linear-gradient(135deg, rgba(22, 33, 62, 0.8) 0%, rgba(15, 52, 96, 0.8) 100%);
+    border: 1px solid rgba(78, 205, 196, 0.3);
+    border-radius: 6px;
+    color: #eaeaea;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-width: 110px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.streaming-btn:hover {
+    background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+    border-color: #ffd60a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(78, 205, 196, 0.2);
+}
+
+.platform-emoji {
+    font-size: 1.5em;
+    margin-bottom: 4px;
+}
+
+.platform-name {
+    font-weight: 600;
+    font-size: 0.85em;
+}
+
+.platform-type {
+    font-size: 0.75em;
+    color: #ffd60a;
+    margin-top: 2px;
+}
+
+.streaming-info {
+    padding: 12px;
+    background-color: rgba(78, 205, 196, 0.1);
+    border-left: 3px solid #4ecdc4;
+    border-radius: 4px;
+    color: #a8a8a8;
+    font-size: 0.9em;
+    margin: 15px 0;
+}
+
+@media (max-width: 768px) {
+    .streaming-buttons { justify-content: center; }
+    .streaming-btn { flex: 0 1 100px; }
+    .platform-name { font-size: 0.8em; }
+}
